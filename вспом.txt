@@ -1,0 +1,10 @@
+query = '''
+SELECT *
+FROM collisions
+LIMIT 5;
+'''
+display(pd.read_sql_query(query, con=engine))
+
+
+,
+       AVG(p.insurance_premium) OVER (PARTITION BY v.vehicle_age)
