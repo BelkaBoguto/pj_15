@@ -520,3 +520,64 @@ vehicle_age
 18.0          1
 Name: vehicle_age, dtype: int64
 Доля пропущенные значений: 2.41
+
+
+case_id                         0.000000
+county_location                 0.000000
+distance                        0.000000
+weather_1                       0.302464
+collision_damage                0.000000
+party_count                     0.000000
+primary_collision_factor        0.177812
+pcf_violation_category          1.321675
+type_of_collision               0.531603
+motor_vehicle_involved_with     0.269468
+road_surface                    0.603094
+road_condition_1                0.434448
+lighting                        0.278633
+party_number                    0.000000
+at_fault                        0.000000
+insurance_premium               0.000000
+party_sobriety                  1.532483
+party_drug_physical            95.076258
+cellphone_in_use                7.644083
+vehicle_type                    0.000000
+vehicle_transmission            1.054040
+vehicle_age                     0.000000
+collision_datetime              0.153982
+
+
+
+# определим наши гиперпараметры
+
+param_gs_tree = [
+    
+   {
+       'models': [DecisionTreeClassifier(random_state=RANDOM_STATE)],
+       'models__min_samples_split': range (5, 10),
+       'models__min_samples_leaf': range (5, 10),
+       'preprocessor__num': [StandardScaler(), MinMaxScaler()]  
+   },
+    
+     
+   {
+       'models': [KNeighborsClassifier()],
+       'models__n_neighbors': range(2, 5),
+       'preprocessor__num': [StandardScaler(), MinMaxScaler(), RobustScaler(), 'passthrough']   
+   },
+
+    
+   {
+       'models': [LogisticRegression(
+           random_state=RANDOM_STATE, 
+           solver='liblinear', 
+           penalty='l1'
+       )],
+       'models__C': range(1,5),
+       'preprocessor__num': [StandardScaler(), MinMaxScaler(), RobustScaler(), 'passthrough']  
+   },
+        
+]
+
+
+
