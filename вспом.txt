@@ -547,6 +547,32 @@ vehicle_age                     0.000000
 collision_datetime              0.153982
 
 
+case_id                  0.000000
+county_location          0.000000
+distance                 0.000000
+weather_1                0.302464
+direction               22.833260
+road_surface             0.603094
+road_condition_1         0.434448
+intersection             0.000000
+location_type           53.237278
+lighting                 0.278633
+collision_date           0.000000
+collision_time           0.000000
+party_number             0.000000
+at_fault                 0.000000
+insurance_premium        0.000000
+cellphone_in_use         0.000000
+vehicle_type             0.000000
+vehicle_transmission     1.054040
+vehicle_age              0.000000
+collision_datetime       0.000000
+month                    0.000000
+hour                     0.000000
+part_of_day              0.000000
+
+
+
 
 # определим наши гиперпараметры
 
